@@ -1,1 +1,1 @@
-# todo-app-laravel54-vuejs
+[Laravel 5.4でWeb APIを作る - Asial Blog](http://blog.asial.co.jp/1498)をやってます。
