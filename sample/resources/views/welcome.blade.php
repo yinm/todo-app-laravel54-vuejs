@@ -11,8 +11,10 @@
 </head>
 <body>
   <div id="app">
-    <example></example>
+    <hello></hello>
+    <hello name="Laravel"></hello>
+    <hello name="Vue.js"></hello>
   </div>
   <script src="js/app.js"></script>
 </body>
-</html
+</html>
