@@ -14,6 +14,13 @@ try {
 } catch (e) {}
 
 /**
+ * プロジェクト作る時にミスったのか、Vueの設定がなかったので追加
+ */
+
+window.Vue = require('vue');
+window.Vue.use(require('vuex'));
+
+/**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
  * CSRF token as a header based on the value of the "XSRF" token cookie.
