@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Item;
 use Illuminate\Http\Request;
+use App\Http\Requests\ItemStoreFormRequest;
 
 class ItemController extends Controller
 {
@@ -30,12 +31,18 @@ class ItemController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\ItemStoreFormRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ItemStoreFormRequest $request)
     {
-        //
+        $item = new Item();
+        // todo ログインユーザのidが入るようにする
+        $item->user_id = \App\User::query()->first()->id;
+        $item->content = $request->input('content');
+        $item->save();
+
+        return response($item, 201);
     }
 
     /**
