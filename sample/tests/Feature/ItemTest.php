@@ -18,10 +18,14 @@ class ItemTest extends TestCase
 
     public function testIndex()
     {
+        $item = Item::query()->find(1);
+        $item->checked = 1;
+        $item->save();
+
         $response = $this->get('/api/items');
 
         $response->assertStatus(200);
-        $this->assertCount(1, $response->json());
+        $this->assertCount(0, $response->json());
     }
 
     public function testShow()

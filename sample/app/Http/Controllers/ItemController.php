@@ -15,7 +15,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        return response(Item::all());
+        return response(Item::query()->where('checked', false)->get());
     }
 
     /**
