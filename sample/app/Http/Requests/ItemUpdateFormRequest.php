@@ -24,7 +24,8 @@ class ItemUpdateFormRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'content' => 'string|max:255',
+            'checked' => 'boolean'
         ];
     }
 }
